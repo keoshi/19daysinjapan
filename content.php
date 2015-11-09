@@ -55,10 +55,10 @@
 		</section>
 		<?php else : ?>
 		<section id="content" class="content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'ksh' ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'daysinjapan' ) ); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'ksh' ),
+					'before' => '<div class="page-links">' . __( 'Pages:', 'daysinjapan' ),
 					'after'  => '</div>',
 				) );
 			?>
@@ -148,29 +148,29 @@
 	<footer class="meta footer-meta clear">
 		<div class="wrap">
 			<?php
-				$categories_list = get_the_category_list( __( ', ', 'ksh' ) );
+				$categories_list = get_the_category_list( __( ', ', 'daysinjapan' ) );
 			?>
 			<span class="day-links">
-				<?php printf( __( 'Part of %1$s', 'ksh' ), $categories_list ); ?>
+				<?php printf( __( 'Part of %1$s', 'daysinjapan' ), $categories_list ); ?>
 			</span>
 			
 			&middot;
 			
-			<?php ksh_posted_on(); ?>
+			<?php daysinjapan_posted_on(); ?>
 
 			<?php
-				$tags_list = get_the_tag_list( '', __( ', ', 'ksh' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'daysinjapan' ) );
 				if ( $tags_list ) :
 			?>
 			
 			&middot;
 			
 			<span class="tags-links">
-				<?php printf( __( 'Tags: %1$s', 'ksh' ), $tags_list ); ?>
+				<?php printf( __( 'Tags: %1$s', 'daysinjapan' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 			
-			<?php edit_post_link( __( '[Edit]', 'ksh' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( '[Edit]', 'daysinjapan' ), '<span class="edit-link">', '</span>' ); ?>
 			
 		</div>
 	</footer>

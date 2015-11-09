@@ -7,10 +7,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'ksh' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'daysinjapan' ),
 				'after'  => '</div>',
 			) );
 		?>
-		<?php edit_post_link( __( 'Edit', 'ksh' ), '<p class="entry-meta"><span class="edit-link">', '</span></p>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'daysinjapan' ), '<p class="entry-meta"><span class="edit-link">', '</span></p>' ); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

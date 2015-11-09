@@ -13,7 +13,7 @@
 	<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package ksh
+ * @package daysinjapan
  */
 
 /**
@@ -26,25 +26,25 @@
  *
  * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
  *
- * @uses ksh_header_style()
- * @uses ksh_admin_header_style()
- * @uses ksh_admin_header_image()
+ * @uses daysinjapan_header_style()
+ * @uses daysinjapan_admin_header_style()
+ * @uses daysinjapan_admin_header_image()
  *
- * @package ksh
+ * @package daysinjapan
  */
-function ksh_custom_header_setup() {
+function daysinjapan_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'ksh_header_style',
-		'admin-head-callback'    => 'ksh_admin_header_style',
-		'admin-preview-callback' => 'ksh_admin_header_image',
+		'wp-head-callback'       => 'daysinjapan_header_style',
+		'admin-head-callback'    => 'daysinjapan_admin_header_style',
+		'admin-preview-callback' => 'daysinjapan_admin_header_image',
 	);
 
-	$args = apply_filters( 'ksh_custom_header_args', $args );
+	$args = apply_filters( 'daysinjapan_custom_header_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
@@ -57,7 +57,7 @@ function ksh_custom_header_setup() {
 		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
-add_action( 'after_setup_theme', 'ksh_custom_header_setup' );
+add_action( 'after_setup_theme', 'daysinjapan_custom_header_setup' );
 
 /**
  * Shiv for get_custom_header().
@@ -70,7 +70,7 @@ add_action( 'after_setup_theme', 'ksh_custom_header_setup' );
  * @todo Remove this function when WordPress 3.6 is released.
  * @return stdClass All properties represent attributes of the curent header image.
  *
- * @package ksh
+ * @package daysinjapan
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -84,13 +84,13 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'ksh_header_style' ) ) :
+if ( ! function_exists( 'daysinjapan_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see ksh_custom_header_setup().
+ * @see daysinjapan_custom_header_setup().
  */
-function ksh_header_style() {
+function daysinjapan_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -123,15 +123,15 @@ function ksh_header_style() {
 	</style>
 	<?php
 }
-endif; // ksh_header_style
+endif; // daysinjapan_header_style
 
-if ( ! function_exists( 'ksh_admin_header_style' ) ) :
+if ( ! function_exists( 'daysinjapan_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see ksh_custom_header_setup().
+ * @see daysinjapan_custom_header_setup().
  */
-function ksh_admin_header_style() {
+function daysinjapan_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -151,15 +151,15 @@ function ksh_admin_header_style() {
 	</style>
 <?php
 }
-endif; // ksh_admin_header_style
+endif; // daysinjapan_admin_header_style
 
-if ( ! function_exists( 'ksh_admin_header_image' ) ) :
+if ( ! function_exists( 'daysinjapan_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see ksh_custom_header_setup().
+ * @see daysinjapan_custom_header_setup().
  */
-function ksh_admin_header_image() {
+function daysinjapan_admin_header_image() {
 	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 	$header_image = get_header_image();
 ?>
@@ -172,4 +172,4 @@ function ksh_admin_header_image() {
 	</div>
 <?php
 }
-endif; // ksh_admin_header_image
+endif; // daysinjapan_admin_header_image

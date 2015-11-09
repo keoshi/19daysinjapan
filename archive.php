@@ -7,28 +7,28 @@
 		<h2 class="archive-day-title">
 			<?php
 				if ( is_category() ) :
-					printf( __( 'Archive for: %s', 'ksh' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					printf( __( 'Archive for: %s', 'daysinjapan' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 				elseif ( is_tag() ) :
-					printf( __( 'Archive for Tag: %s', 'ksh' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+					printf( __( 'Archive for Tag: %s', 'daysinjapan' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 				elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-					_e( 'Asides', 'ksh' );
+					_e( 'Asides', 'daysinjapan' );
 
 				elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-					_e( 'Images', 'ksh');
+					_e( 'Images', 'daysinjapan');
 
 				elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-					_e( 'Videos', 'ksh' );
+					_e( 'Videos', 'daysinjapan' );
 
 				elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-					_e( 'Quotes', 'ksh' );
+					_e( 'Quotes', 'daysinjapan' );
 
 				elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-					_e( 'Links', 'ksh' );
+					_e( 'Links', 'daysinjapan' );
 
 				else :
-					_e( 'Archives', 'ksh' );
+					_e( 'Archives', 'daysinjapan' );
 
 				endif;
 			?>
@@ -72,7 +72,7 @@
 		<?php endwhile; ?>
 		</ul>
 
-	<?php // ksh_content_nav( 'nav-below' ); ?>
+	<?php // daysinjapan_content_nav( 'nav-below' ); ?>
 
 <?php else : ?>
 

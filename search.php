@@ -3,7 +3,7 @@
 <div class="wrap">
 	
 	<h2 class="archive-day-title">
-		<?php printf( __( 'Search Results for: %s', 'ksh' ), '<span>' . get_search_query() . '</span>' ); ?>
+		<?php printf( __( 'Search Results for: %s', 'daysinjapan' ), '<span>' . get_search_query() . '</span>' ); ?>
 	</h2>
 	
 	<ul class="archive-day clear">
@@ -29,7 +29,7 @@
 
 			<?php endwhile; ?>
 
-			<?php ksh_content_nav( 'nav-below' ); ?>
+			<?php daysinjapan_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 

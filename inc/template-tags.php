@@ -1,10 +1,10 @@
 <?php
 /**
- * @package ksh
+ * @package daysinjapan
  */
 
-if ( ! function_exists( 'ksh_content_nav' ) ) :
-function ksh_content_nav( $nav_id ) {
+if ( ! function_exists( 'daysinjapan_content_nav' ) ) :
+function daysinjapan_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	/*if ( is_single() ) {
@@ -23,8 +23,8 @@ function ksh_content_nav( $nav_id ) {
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<div class="wrap">
-			<?php previous_post_link( '<div class="nav-previous"><h5 class="screen-reader-text">Previous Post</h5>%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'ksh' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<div class="nav-next"><h5 class="screen-reader-text">Next Post</h5>%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'ksh' ) . '</span>' ); ?>
+			<?php previous_post_link( '<div class="nav-previous"><h5 class="screen-reader-text">Previous Post</h5>%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'daysinjapan' ) . '</span> %title' ); ?>
+			<?php next_post_link( '<div class="nav-next"><h5 class="screen-reader-text">Next Post</h5>%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'daysinjapan' ) . '</span>' ); ?>
 		</div>
 
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
@@ -32,15 +32,15 @@ function ksh_content_nav( $nav_id ) {
 }
 endif;
 
-if ( ! function_exists( 'ksh_comment' ) ) :
-function ksh_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'daysinjapan_comment' ) ) :
+function daysinjapan_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'ksh' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'ksh' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'daysinjapan' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'daysinjapan' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -50,20 +50,20 @@ function ksh_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'ksh' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'daysinjapan' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author -->
 
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'ksh' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'daysinjapan' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', 'ksh' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'daysinjapan' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'ksh' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'daysinjapan' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -81,9 +81,9 @@ function ksh_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'ksh_posted_on' ) ) :
-function ksh_posted_on() {
-	printf( __( 'Published on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', 'ksh' ),
+if ( ! function_exists( 'daysinjapan_posted_on' ) ) :
+function daysinjapan_posted_on() {
+	printf( __( 'Published on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', 'daysinjapan' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -92,7 +92,7 @@ function ksh_posted_on() {
 }
 endif;
 
-function ksh_categorized_blog() {
+function daysinjapan_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories( array(
@@ -106,17 +106,17 @@ function ksh_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so ksh_categorized_blog should return true
+		// This blog has more than 1 category so daysinjapan_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so ksh_categorized_blog should return false
+		// This blog has only 1 category so daysinjapan_categorized_blog should return false
 		return false;
 	}
 }
 
-function ksh_category_transient_flusher() {
+function daysinjapan_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'ksh_category_transient_flusher' );
-add_action( 'save_post', 'ksh_category_transient_flusher' );
+add_action( 'edit_category', 'daysinjapan_category_transient_flusher' );
+add_action( 'save_post', 'daysinjapan_category_transient_flusher' );

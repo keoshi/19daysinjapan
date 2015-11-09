@@ -4,7 +4,7 @@
 
 		<?php get_template_part( 'content' ); ?>
 
-		<?php ksh_content_nav( 'nav-below' ); ?>
+		<?php daysinjapan_content_nav( 'nav-below' ); ?>
 
 	<?php endwhile; ?>
 

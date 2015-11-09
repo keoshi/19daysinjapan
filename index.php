@@ -13,7 +13,7 @@
 
 		<?php $i++; endwhile; ?>
 		
-		<?php ksh_content_nav( 'nav-below' ); ?>
+		<?php daysinjapan_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 

@@ -3,19 +3,19 @@
 <article id="post-0" class="post not-found">
 	<div class="wrap">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php _e( 'The sun hasn\'t risen yet...', 'ksh' ); ?></h1>
+			<h1 class="entry-title"><?php _e( 'The sun hasn\'t risen yet...', 'daysinjapan' ); ?></h1>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<p><?php _e( 'Don\'t worry, we just couldn\'t found the page you\'re looking for. Try one of the links below or a search.', 'ksh' ); ?></p>
+			<p><?php _e( 'Don\'t worry, we just couldn\'t found the page you\'re looking for. Try one of the links below or a search.', 'daysinjapan' ); ?></p>
 
 			<?php // get_search_form(); ?>
 
 			<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-			<?php if ( ksh_categorized_blog() ) : ?>
+			<?php if ( daysinjapan_categorized_blog() ) : ?>
 			<div class="widget widget_categories">
-				<h2 class="widgettitle"><?php _e( 'Explore by Day', 'ksh' ); ?></h2>
+				<h2 class="widgettitle"><?php _e( 'Explore by Day', 'daysinjapan' ); ?></h2>
 				<ul>
 				<?php
 					wp_list_categories( array(
