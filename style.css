@@ -675,13 +675,7 @@ sub {
 }
 .info-window {
 	position: relative;
-	margin-top: 10px;
-	width: 260px;
-	padding: 16px;
-	background-color: #fff;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+	padding: 16px 8px 0;
 }
 	.info-window h3 {
 		text-overflow: ellipsis;
@@ -689,7 +683,7 @@ sub {
 		line-height: 1em;
 		white-space: nowrap;
 		overflow: hidden;
-		padding-bottom: 14px;
+		padding-bottom: 5px;
 	}
 		.info-window h3 a {
 			font-size: 20px;
