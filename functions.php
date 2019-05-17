@@ -310,3 +310,13 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 require get_template_directory() . '/inc/jetpack.php';
+
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = 'YOUR_GOOGLE_MAPS_API_KEY_HERE';
+	
+	return $api;
+	
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
