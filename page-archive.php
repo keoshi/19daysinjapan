@@ -19,7 +19,7 @@ get_header();
 
 	global $post;
 	
-	$args = array( 'posts_per_page' => -1, 'order'=> ASC, 'orderby' => 'date' );
+	$args = array( 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'date' );
 
 	$allposts = get_posts( $args );
 	foreach ( $allposts as $post ) : setup_postdata( $post );

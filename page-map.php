@@ -66,7 +66,7 @@ if ($all_posts) :
 				$map = get_field('map');
 				$i++;
 		?>
-			['<?php echo $location?>',<?php echo $map[lat]; ?>,<?php echo $map[lng]; ?>,<?php echo $i ?>, "<?php the_title(); ?>", "<?php the_permalink(); ?>", '<?php echo get_the_post_thumbnail( $id, 'medium' ); ?>'],
+			['<?php echo $location?>',<?php echo $map['lat']; ?>,<?php echo $map['lng']; ?>,<?php echo $i ?>, "<?php the_title(); ?>", "<?php the_permalink(); ?>", '<?php echo get_the_post_thumbnail( $id, 'medium' ); ?>'],
 		<?php endforeach; ?>
 		];
 		function setMarkers(map, locations) {
